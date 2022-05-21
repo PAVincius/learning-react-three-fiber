@@ -2,15 +2,6 @@
   padding: 0 2rem;
 }
 
-.Canvas {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: azure;
-}
-
-
 .main {
   min-height: 100vh;
   padding: 4rem 0;

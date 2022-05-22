@@ -1,24 +1,26 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Canvas } from 'react-three-fiber'
+import { Canvas } from '@react-three/fiber'
 import React, { useState } from 'react'
+import { useSpring, animated } from '@react-spring/three';
 
 const Sphere = () =>{
 
-  const [hovered, setHovered] = useState(false);
+  const [hovered, setHovered] = useState(false);  
   const [active, setActive] = useState(false);
+  const props = useSpring({
+    scale: active  ? [1.5, 1.5, 1.5] : [1, 1, 1],
+    color: hovered ? "gray" : "black",
+  });
 
   return (
-    <mesh 
+    <animated.mesh 
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={() => setActive(!active)}
-      scale={active  ? [2, 2, 2] : [1, 1, 1]}
+      scale={props.scale}
     >
       <sphereBufferGeometry attach="geometry" args={[1, 16, 32]}/>
-      <meshBasicMaterial attach="material" color={hovered ? "gray" : "black"}/>
-    </mesh>
+      <animated.meshBasicMaterial attach="material" color={props.color}/>
+    </animated.mesh>
   )
 }
 

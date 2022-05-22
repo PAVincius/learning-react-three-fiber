@@ -1,6 +1,25 @@
-import { Canvas } from '@react-three/fiber'
-import React, { useState } from 'react'
+import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
+import React, { useState, useRef } from 'react'
 import { useSpring, animated } from '@react-spring/three';
+import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+
+extend({ OrbitControls })
+
+const Controls = () => {
+  const orbitRef = useRef();
+  const { camera, gl } = useThree();
+
+  useFrame(() => {
+    orbitRef.current.update()
+  })
+
+  return (
+    <orbitControls
+      args={[camera, gl.domElement]}
+      ref={orbitRef}
+    />
+  )
+}
 
 const Sphere = () =>{
 
@@ -19,7 +38,7 @@ const Sphere = () =>{
       scale={props.scale}
     >
       <sphereBufferGeometry attach="geometry" args={[1, 16, 32]}/>
-      <animated.meshBasicMaterial attach="material" color={props.color}/>
+      <animated.meshBasicMaterial attach="material" color={props.color}/>    
     </animated.mesh>
   )
 }
@@ -27,7 +46,8 @@ const Sphere = () =>{
 export default function Home() {
   return (
     <Canvas>
-      <Sphere/>
+      <Controls />
+      <Sphere />
     </Canvas>
   )
 }

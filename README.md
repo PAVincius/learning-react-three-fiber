@@ -6,7 +6,7 @@ The basic examples of shapes, lights, and shadows using react-three-fiber which 
 ## Technologies
 ### Frontend ([@react-three-fiber](https://github.com/pmndrs/react-three-fiber) & [Three.js](https://threejs.org/))
 
-![image](https://github.com/PAVincius/learning-react-three-fiber)
+![image](https://github.com/PAVincius/learning-react-three-fiber/blob/main/react_three_fiber/public/FrontEnd.png)
 
 # What did I learn:
 
@@ -19,4 +19,4 @@ The basic examples of shapes, lights, and shadows using react-three-fiber which 
 
 - How can we use custom mashes?
 - Can I make some realistic reflection?
-- Does ([drei](https://github.com/pmndrs/drei) make it easier?
+- Does [drei](https://github.com/pmndrs/drei) make it easier?

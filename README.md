@@ -9,6 +9,9 @@ Clone the repo, open your favorite terminal inside the repository folder and pas
 ```bash
 yarn install 
 ```
+
+and then
+
 ```bash
 yarn dev 
 ```

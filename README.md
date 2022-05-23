@@ -2,6 +2,16 @@
 
 The basic examples of shapes, lights, and shadows using react-three-fiber which is a React renderer for threejs.
 
+## Want to try localy
+
+Clone the repo, open your favorite terminal inside the repository folder and paste the code below:
+
+```bash
+yarn install 
+```
+```bash
+yarn dev 
+```
 
 ## Technologies
 ### Frontend ([@react-three-fiber](https://github.com/pmndrs/react-three-fiber) & [Three.js](https://threejs.org/))
